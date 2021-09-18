@@ -1,28 +1,24 @@
-import React from "react";
-import Product from "../Product/Product";
-const products = [
-  {
-    id: 1,
-    name: "Shoes",
-    description: "Running Shoes",
-  },
-  {
-    id: 2,
-    name: "Jacket",
-    description: "Rain Jacket",
-  },
-];
+import { useContext } from "react";
+import ContextData from "../context/ContextProvider";
+import Product from "./Product/Product";
 
 function Products() {
+  const context = useContext(ContextData);
   return (
-    <main>
-      <div className="container">
-        {products.map((product) => {
-          <Product
-            key={product.id}
-            name={product.name}
-            description={product.description}
-          ></Product>;
+    <main className="container-fluid px-5 h-auto">
+      <div className="d-flex justify-content-between align-items-center flex-wrap">
+        {context.mainState.productList.map((product) => {
+          return (
+            <Product
+              key={product.id}
+              id={product.id}
+              productImg={product.image}
+              productName={product.title}
+              productPrice={`${product.price}€`}
+              category={product.category}
+              count={product.rating.count}
+            ></Product>
+          );
         })}
       </div>
     </main>
