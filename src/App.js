@@ -4,20 +4,30 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import { useContext } from "react";
 import ContextData from "./Components/context/ContextProvider";
 // Components
+import Login from "./Components/Login/Login";
 import NavBar from "./Components/NavBar/NavBar";
 import Products from "./Components/Products/Products";
+import Chart from "./Components/Chart/Chart";
 function App() {
   const context = useContext(ContextData);
-  // console.log(context);
-  return (
-    <HashRouter basename="/">
+  if (!context.mainState.userLoggedIn) {
+    return (
       <div className="App">
-        <NavBar></NavBar>
-
-        <Products></Products>
+        <Login></Login>
       </div>
-    </HashRouter>
-  );
+    );
+  } else {
+    return (
+      <HashRouter basename="/">
+        <div className="App">
+          <NavBar></NavBar>
+
+          <Products></Products>
+          <Chart></Chart>
+        </div>
+      </HashRouter>
+    );
+  }
 }
 
 export default App;

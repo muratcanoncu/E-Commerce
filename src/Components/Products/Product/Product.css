@@ -1,5 +1,5 @@
 .product {
-  width: 360px;
+  width: 350px;
   height: 450px;
   border: 1px solid lightgray;
   margin: 10px 5px;
@@ -63,4 +63,22 @@
 .product .product__button i:hover {
   transition: 0.2s;
   color: rgb(0, 174, 65);
+}
+@media only screen and (max-width: 450px) {
+  .product {
+    width: 370px;
+  }
+  .product .product__img {
+    height: 50%;
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+  .product {
+    width: 400px;
+  }
+  .product .product__img {
+    height: 50%;
+    width: 90%;
+  }
 }
