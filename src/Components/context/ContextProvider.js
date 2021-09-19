@@ -8,10 +8,6 @@ export function ContextProvider(props) {
   const [state, dispatch] = useReducer(Reducer, InitialState);
   useEffect(async () => {
     const products = await axios.get(productsApi);
-    function shuffle(array) {
-      array.sort(() => Math.random() - 0.5);
-    }
-    shuffle(products.data);
     if (products.status === 200) {
       dispatch({
         type: "PRODUCTS_DOWNLOADED",

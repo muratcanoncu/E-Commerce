@@ -4,8 +4,9 @@ import Product from "./Product/Product";
 
 function Products() {
   const context = useContext(ContextData);
+  if (!context.mainState.productList) return <h1>Loading...</h1>;
   return (
-    <main className="container-fluid px-4 h-auto">
+    <main className="container-fluid px-4 mt-5 h-auto">
       <div className="d-flex justify-content-between align-items-center flex-wrap">
         {context.mainState.productList.map((product) => {
           return (

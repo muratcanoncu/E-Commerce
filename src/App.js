@@ -21,9 +21,17 @@ function App() {
       <HashRouter basename="/">
         <div className="App">
           <NavBar></NavBar>
-
-          <Products></Products>
-          <Chart></Chart>
+          <Switch>
+            <Route path="/" exact>
+              <Products></Products>
+            </Route>
+            <Route path="/chart">
+              <Chart></Chart>
+            </Route>
+            <Route path="/order">
+              <h1>Order</h1>
+            </Route>
+          </Switch>
         </div>
       </HashRouter>
     );
