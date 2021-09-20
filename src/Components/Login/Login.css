@@ -31,10 +31,11 @@ main {
   text-align: left !important;
 }
 .content__side {
+  font-family: "Open Sans", sans-serif;
   width: 50%;
   height: calc(100vh - 120px);
   background-color: #0841b0;
-  padding-bottom: 250px;
+  padding-bottom: 180px;
   color: white;
   display: flex;
   flex-direction: column;

@@ -10,6 +10,10 @@ function Product(props) {
       payload: props.id,
     });
   };
+
+  //   const handleUpdateCartQuantity = async(productId,quantity)=>{
+  // const response= await ax
+  //   }
   return (
     <div className="product d-flex flex-column justify-content-center align-items-center p-1">
       <img

@@ -36,6 +36,7 @@ const reducer = (state, action) => {
           ...state,
           userLoggedIn: true,
           loggedInUser: loginUser[0],
+          falseUserDataTried: false,
         };
       } else {
         return {
@@ -45,6 +46,24 @@ const reducer = (state, action) => {
       }
     case "USER_LOGOUT":
       return { ...state, userLoggedIn: false, loggedInUser: {} };
+    case "REMOVE_FROM_CHART":
+      const removedArray = state.loggedInUser.userCart.filter((product) => {
+        return product.id !== action.payload.id;
+      });
+      let removedPrice = state.cartTotalAmount;
+      removedPrice = removedPrice - action.payload.price;
+
+      return {
+        ...state,
+        loggedInUser: { ...state.loggedInUser, userCart: removedArray },
+        cartTotalAmount: removedPrice,
+      };
+    case "EMPTY_CART":
+      return {
+        ...state,
+        loggedInUser: { ...state.loggedInUser, userCart: [] },
+        cartTotalAmount: 0,
+      };
     default:
       break;
   }

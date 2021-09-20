@@ -59,6 +59,7 @@
 }
 .navbar__cart__button a {
   color: none;
+  text-decoration: none;
 }
 .navbar__cart__button a:hover {
   color: red !important;

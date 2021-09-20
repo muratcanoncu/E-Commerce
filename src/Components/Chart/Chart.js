@@ -1,14 +1,24 @@
 import { useContext, useState } from "react";
 import ContextData from "../context/ContextProvider";
+import { NavLink } from "react-router-dom";
 import "./Chart.css";
 // Component
 import CartItem from "./CartItem/CartItem";
 function Chart() {
   const context = useContext(ContextData);
-
+  const emptyCartFunc = (dispatch) => {
+    dispatch({
+      type: "EMPTY_CART",
+    });
+  };
   const EmptyCart = () => {
     return (
-      <h1>You have no item in your shopping chart, please add something!</h1>
+      <div>
+        <h1>You have no items in your shopping cart</h1>
+        <NavLink to="/">
+          <button className="back__button mt-2">Start Adding Some</button>
+        </NavLink>
+      </div>
     );
   };
   const FilledCart = () => {
@@ -19,6 +29,7 @@ function Chart() {
             return (
               <CartItem
                 key={product.id}
+                id={product.id}
                 itemImg={product.image}
                 itemName={product.title}
                 itemPrice={product.price}
@@ -28,9 +39,16 @@ function Chart() {
         </div>
 
         <div className="cart__bottom d-flex justify-content-between align-items-center w-75 mx-auto flex-wrap">
-          <h3>Subtotal : {context.mainState.cartTotalAmount} €</h3>
+          <h3>Subtotal : {context.mainState.cartTotalAmount.toFixed(2)} €</h3>
           <div className="cart__buttons--modifier d-flex justify-content-between ">
-            <button className="cart__emptyCart">EMPTY CART</button>
+            <button
+              className="cart__emptyCart"
+              onClick={() => {
+                emptyCartFunc(context.myDispatch);
+              }}
+            >
+              EMPTY CART
+            </button>
             <button className="cart__checkout">CHECKOUT</button>
           </div>
         </div>
@@ -39,7 +57,9 @@ function Chart() {
   };
   return (
     <div className="cart container-fluid">
-      <h1>Your Shopping Chart</h1>
+      <h1>
+        <span>{context.mainState.loggedInUser.name}</span>'s Shopping Chart
+      </h1>
       {!context.mainState.loggedInUser.userCart.length ? (
         <EmptyCart></EmptyCart>
       ) : (

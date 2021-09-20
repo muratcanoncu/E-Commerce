@@ -96,7 +96,7 @@ function Login() {
           </form>
         </div>
         <div className="content__side">
-          <h1>
+          <h1 className="mb-5">
             We Create Shopping <br /> Experience Again!
           </h1>
           <p className="mt-3 mb-5">You demand it, we make it!</p>

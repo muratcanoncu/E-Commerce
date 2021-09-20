@@ -21,7 +21,7 @@ function NavBar() {
       <div className="navbar__cart__button px-1">
         {location.pathname === "/" ? (
           <NavLink to="/chart">
-            <div className="navbar__right">
+            <div className="navbar__right" title="Chart">
               <div className="navbar__productAmount d-flex justify-content-center pt-1">
                 <p>{context.mainState.loggedInUser.userCart.length}</p>
               </div>

@@ -1,8 +1,9 @@
 .card {
   height: 450px;
-  width: 370px;
-  margin: 20px 10px;
-  padding: 10px;
+  min-width: 370px;
+  width: 23%;
+  margin: 20px 20px;
+  padding: 20px;
   box-shadow: 2px 2px 5px lightgray;
 }
 .card img {
@@ -20,7 +21,6 @@
 .item__price {
   font-size: 25px;
 }
-
 .amount__actions button {
   background-color: white;
   border: none;

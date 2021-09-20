@@ -31,6 +31,9 @@ function App() {
             <Route path="/order">
               <h1>Order</h1>
             </Route>
+            <Route>
+              <h1>Order Completed</h1>
+            </Route>
           </Switch>
         </div>
       </HashRouter>

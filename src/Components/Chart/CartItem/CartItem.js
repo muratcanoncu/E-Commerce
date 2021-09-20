@@ -3,6 +3,12 @@ import "./CartItem.css";
 import ContextData from "../../context/ContextProvider";
 function CartItem(props) {
   const context = useContext(ContextData);
+  const removeFromChartFunction = (dispatch) => {
+    dispatch({
+      type: "REMOVE_FROM_CHART",
+      payload: { id: props.id, price: props.itemPrice },
+    });
+  };
   return (
     <div className="card d-flex justify-content-between align-items-center flex-column">
       <img className="w-100" src={props.itemImg} alt="item image"></img>
@@ -16,7 +22,14 @@ function CartItem(props) {
           <p className="mb-0">0</p>
           <button>+</button>
         </div>
-        <button className="remove__button">Remove</button>
+        <button
+          className="remove__button"
+          onClick={() => {
+            removeFromChartFunction(context.myDispatch);
+          }}
+        >
+          Remove
+        </button>
       </div>
     </div>
   );
