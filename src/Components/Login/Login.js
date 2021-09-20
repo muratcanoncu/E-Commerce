@@ -3,9 +3,7 @@ import ContextData from "../context/ContextProvider";
 import "./Login.css";
 import SmartLogo from "../Assets/SmartLogo.jpeg";
 // Images
-import CartImg from "../Assets/cart.png";
-import Discount from "../Assets/cheap.png";
-import Delivery from "../Assets/delivery.png";
+
 import SmartLoginLogo from "../Assets/smartRecruitersLoginLofo.png";
 function Login() {
   const [formData, setFormData] = useState({ userEmail: "", userPassword: "" });
@@ -26,7 +24,7 @@ function Login() {
     }
   };
   return (
-    <main>
+    <main className="login">
       <nav className="navbar d-flex justify-content-between align-items-center px-2">
         <div className="navbar__left d-flex justify-content-center align-items-center">
           <img className="navbar__logo" src={SmartLogo}></img>
@@ -91,6 +89,7 @@ function Login() {
 
             <div className="login__form__buttons d-flex justify-content-start align-items-center">
               <button>LOG IN</button>
+
               <a href="#">Forgot your password?</a>
             </div>
           </form>
@@ -99,7 +98,9 @@ function Login() {
           <h1 className="mb-5">
             We Create Shopping <br /> Experience Again!
           </h1>
-          <p className="mt-3 mb-5">You demand it, we make it!</p>
+          <p className="mt-3 mb-5 content__side__slogan">
+            You demand it, we make it!
+          </p>
           <div className="content__side--images">
             <div>
               <i className="fas fa-shopping-cart"></i>

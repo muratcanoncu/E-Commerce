@@ -8,18 +8,23 @@ const reducer = (state, action) => {
       return {
         ...state,
         productList: [...action.payload],
+        deliveryCountries: [...action.payloadTwo],
       };
     case "ADD_TO_CHART":
       let itemToAdd = state.productList.filter((product) => {
         return product.id === action.payload;
       });
-      let newCart = [...state.loggedInUser.userCart];
-      newCart.push(itemToAdd[0]);
+      let newItem = itemToAdd[0];
       let newTotalPrice = state.cartTotalAmount + itemToAdd[0].price;
-
       return {
         ...state,
-        loggedInUser: { ...state.loggedInUser, userCart: newCart },
+        loggedInUser: {
+          ...state.loggedInUser,
+          userCart: [
+            ...state.loggedInUser.userCart,
+            { ...newItem, id: Math.floor(Math.random() * 100000) },
+          ],
+        },
         cartTotalAmount: newTotalPrice,
       };
     case "USER_LOGIN_TRIED":
@@ -63,6 +68,15 @@ const reducer = (state, action) => {
         ...state,
         loggedInUser: { ...state.loggedInUser, userCart: [] },
         cartTotalAmount: 0,
+      };
+    case "ADDRESS_DATA_FILLED":
+      console.log(action.payload, "inreducer");
+      let newTotalCartAmount =
+        state.cartTotalAmount + Number(action.payload.shippingOption);
+      return {
+        ...state,
+        orderData: action.payload,
+        cartTotalAmount: newTotalCartAmount,
       };
     default:
       break;

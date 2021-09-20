@@ -1,10 +1,15 @@
 .card {
   height: 450px;
-  min-width: 370px;
+  min-width: 330px;
   width: 23%;
   margin: 20px 20px;
   padding: 20px;
+
   box-shadow: 2px 2px 5px lightgray;
+}
+.card:hover {
+  box-shadow: 2px 2px 5px gray;
+  transition: 0.1s;
 }
 .card img {
   height: 65%;
@@ -16,7 +21,7 @@
   height: 10%;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .item__price {
   font-size: 25px;

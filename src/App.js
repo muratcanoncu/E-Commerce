@@ -8,6 +8,7 @@ import Login from "./Components/Login/Login";
 import NavBar from "./Components/NavBar/NavBar";
 import Products from "./Components/Products/Products";
 import Chart from "./Components/Chart/Chart";
+import Checkout from "./Components/Order/Order";
 function App() {
   const context = useContext(ContextData);
   if (!context.mainState.userLoggedIn) {
@@ -29,7 +30,7 @@ function App() {
               <Chart></Chart>
             </Route>
             <Route path="/order">
-              <h1>Order</h1>
+              <Checkout></Checkout>
             </Route>
             <Route>
               <h1>Order Completed</h1>

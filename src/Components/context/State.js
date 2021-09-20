@@ -4,6 +4,8 @@ const initialState = {
   falseUserDataTried: false,
   loggedInUser: {},
   cartTotalAmount: 0,
+  orderData: {},
+  deliveryCountries: [],
   users: [
     {
       id: 1,

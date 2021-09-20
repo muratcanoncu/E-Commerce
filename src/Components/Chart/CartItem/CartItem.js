@@ -17,11 +17,11 @@ function CartItem(props) {
         <p className="item__price">{props.itemPrice} €</p>
       </div>
       <div className="cart__actions">
-        <div className="d-flex align-items-center amount__actions">
+        {/* <div className="d-flex align-items-center amount__actions">
           <button>-</button>
           <p className="mb-0">0</p>
           <button>+</button>
-        </div>
+        </div> */}
         <button
           className="remove__button"
           onClick={() => {

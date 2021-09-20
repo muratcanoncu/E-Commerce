@@ -1,9 +1,14 @@
 .cart {
   padding: 80px 70px;
+  background-color: #e7f3f2;
+  min-height: calc(100vh - 120px);
+  height: auto;
 }
 .cart > h1 {
   text-align: left !important;
   margin-bottom: 30px;
+  border-bottom: 8px solid #0841b0;
+  padding-bottom: 10px;
 }
 .cart > h1 span {
   font-size: 3.3rem;
@@ -37,8 +42,9 @@
 .cart__emptyCart:hover {
   background-color: #bd352b;
 }
-.cart__checkout:hover {
-  background-color: #3d8a40;
+
+.back__button--modifier {
+  padding: 15px 10px;
 }
 .back__button {
   background-color: #088475;
@@ -52,10 +58,16 @@
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 .back__button:hover {
   background-color: rgb(28, 148, 134);
   border-color: #088475;
   box-shadow: 5px 5px 10px gray;
   transition: 0.3s;
+}
+@media only screen and (max-width: 450px) {
+  .cart {
+    padding: 80px 5px;
+  }
 }

@@ -1,11 +1,18 @@
+.product__container {
+  background-color: #e7f3f2;
+  height: calc(100vh - 120px);
+}
 .product {
   width: 350px;
   height: 450px;
   border: 1px solid lightgray;
-  margin: 10px 5px;
+  margin: 20px 5px;
+  background-color: #ffffff;
+  padding-top: 20px !important;
 }
 .product:hover {
   box-shadow: 2px 2px 5px gray;
+  transition: 0.1s;
 }
 .product .product__img {
   height: 50%;

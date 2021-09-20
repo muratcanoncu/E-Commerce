@@ -38,8 +38,13 @@ function Chart() {
           })}
         </div>
 
-        <div className="cart__bottom d-flex justify-content-between align-items-center w-75 mx-auto flex-wrap">
+        <div className="cart__bottom d-flex justify-content-between align-items-center w-75 mx-auto flex-wrap pb-4">
           <h3>Subtotal : {context.mainState.cartTotalAmount.toFixed(2)} €</h3>
+          <div className="">
+            <NavLink to="/">
+              <button className="back__button mt-2">Start Adding Some</button>
+            </NavLink>
+          </div>
           <div className="cart__buttons--modifier d-flex justify-content-between ">
             <button
               className="cart__emptyCart"
@@ -49,14 +54,16 @@ function Chart() {
             >
               EMPTY CART
             </button>
-            <button className="cart__checkout">CHECKOUT</button>
+            <NavLink to="/order">
+              <button className="cart__checkout">CHECKOUT</button>
+            </NavLink>
           </div>
         </div>
       </div>
     );
   };
   return (
-    <div className="cart container-fluid">
+    <div className="cart">
       <h1>
         <span>{context.mainState.loggedInUser.name}</span>'s Shopping Chart
       </h1>
