@@ -97,6 +97,17 @@ const reducer = (state, action) => {
         ...state,
         loggedInUser: { ...state.loggedInUser, userCart: [] },
         cartTotalAmount: 0,
+        orderData: {
+          orderDataEntered: false,
+          firstName: "",
+          lastName: "",
+          address: "",
+          eMail: "",
+          city: "",
+          ZIP: "",
+          country: "",
+          shippingOption: 45,
+        },
       };
     default:
       break;

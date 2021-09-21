@@ -14,12 +14,12 @@ function ConfirmationForm() {
   var dd = String(today.getDate()).padStart(2, "0");
   var mm = String(today.getMonth() + 1).padStart(2, "0");
   var yyyy = today.getFullYear();
-  const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()} (CEST)`;
+  const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}(CEST)`;
   today = dd + "/" + mm + "/" + yyyy;
   const text = `on ${today} at ${time} `;
   setTimeout(() => {
     setSpinning(false);
-  }, 2500);
+  }, 2000);
   const OrderCompleted = () => {
     return (
       <div className="confirmation__box">
