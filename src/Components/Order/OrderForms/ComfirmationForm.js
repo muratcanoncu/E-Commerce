@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-import { Spinner } from "react-bootstrap";
+import { NavbarBrand, Spinner } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import ContextData from "../../context/ContextProvider";
 function ConfirmationForm() {
   const context = useContext(ContextData);
@@ -13,20 +14,30 @@ function ConfirmationForm() {
   var dd = String(today.getDate()).padStart(2, "0");
   var mm = String(today.getMonth() + 1).padStart(2, "0");
   var yyyy = today.getFullYear();
-  const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()} CEST`;
+  const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()} (CEST)`;
   today = dd + "/" + mm + "/" + yyyy;
-  const text = `on ${today} at ${time}`;
+  const text = `on ${today} at ${time} `;
   setTimeout(() => {
     setSpinning(false);
   }, 2500);
   const OrderCompleted = () => {
     return (
-      <div>
-        <h1>Order Received</h1>
-        <h2 className="text-left">
+      <div className="confirmation__box">
+        <h1>
+          Order Received <i class="fas fa-check thick"></i>
+        </h1>
+        <h3>
           Dear {orderInfo.userInfo.name} {orderInfo.userInfo.name},
-        </h2>
-        <p className="text-left">Your order is {text} placed</p>
+        </h3>
+        <p className="text-left">
+          Your order has been {text} placed <br />
+          Order details has been sent to{" "}
+          <strong>{context.mainState.loggedInUser.email}</strong>
+        </p>
+
+        <NavLink to="/">
+          <button className="back__home__button">Back To Home</button>
+        </NavLink>
       </div>
     );
   };

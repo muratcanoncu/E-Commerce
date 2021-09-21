@@ -23,6 +23,9 @@
   display: flex;
   justify-content: flex-end;
 }
+.card .item__name {
+  width: 70%;
+}
 .item__price {
   font-size: 25px;
 }

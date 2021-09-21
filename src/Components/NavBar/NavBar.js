@@ -13,11 +13,14 @@ function NavBar() {
   };
   return (
     <nav className="navbar d-flex justify-content-between align-items-center">
-      <div className="navbar__left d-flex justify-content-center align-items-center">
-        <img className="navbar__logo" src={SmartLogo}></img>
-        <p className="mt-2">Smart Shop</p>
-        {/* <NavLink to="/">Link</NavLink> */}
-      </div>
+      <NavLink to="/">
+        <div className="navbar__left d-flex justify-content-center align-items-center ">
+          <img className="navbar__logo" src={SmartLogo}></img>
+          <p className="mt-2">Smart Shop</p>
+          {/* <NavLink to="/">Link</NavLink> */}
+        </div>
+      </NavLink>
+
       <div className="navbar__cart__button px-1">
         {location.pathname === "/" ? (
           <NavLink to="/chart">

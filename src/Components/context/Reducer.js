@@ -50,7 +50,22 @@ const reducer = (state, action) => {
         };
       }
     case "USER_LOGOUT":
-      return { ...state, userLoggedIn: false, loggedInUser: {} };
+      return {
+        ...state,
+        userLoggedIn: false,
+        loggedInUser: {},
+        orderData: {
+          orderDataEntered: false,
+          firstName: "",
+          lastName: "",
+          address: "",
+          eMail: "",
+          city: "",
+          ZIP: "",
+          country: "",
+          shippingOption: 45,
+        },
+      };
     case "REMOVE_FROM_CHART":
       const removedArray = state.loggedInUser.userCart.filter((product) => {
         return product.id !== action.payload.id;
@@ -70,13 +85,18 @@ const reducer = (state, action) => {
         cartTotalAmount: 0,
       };
     case "ADDRESS_DATA_FILLED":
-      console.log(action.payload, "inreducer");
       let newTotalCartAmount =
         state.cartTotalAmount + Number(action.payload.shippingOption);
       return {
         ...state,
-        orderData: action.payload,
+        orderData: { ...action.payload, orderDataEntered: true },
         cartTotalAmount: newTotalCartAmount,
+      };
+    case "PAYMENT__DONE":
+      return {
+        ...state,
+        loggedInUser: { ...state.loggedInUser, userCart: [] },
+        cartTotalAmount: 0,
       };
     default:
       break;

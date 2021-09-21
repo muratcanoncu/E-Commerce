@@ -32,9 +32,6 @@ function App() {
             <Route path="/order">
               <Checkout></Checkout>
             </Route>
-            <Route>
-              <h1>Order Completed</h1>
-            </Route>
           </Switch>
         </div>
       </HashRouter>

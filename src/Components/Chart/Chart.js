@@ -39,10 +39,16 @@ function Chart() {
         </div>
 
         <div className="cart__bottom d-flex justify-content-between align-items-center w-75 mx-auto flex-wrap pb-4">
-          <h3>Subtotal : {context.mainState.cartTotalAmount.toFixed(2)} €</h3>
+          <h3>
+            Subtotal :{" "}
+            {context.mainState.cartTotalAmount.toLocaleString("en-GB", {
+              timeZone: "UTC",
+            })}{" "}
+            €
+          </h3>
           <div className="">
             <NavLink to="/">
-              <button className="back__button mt-2">Start Adding Some</button>
+              <button className="back__button mt-2">Back to Shop</button>
             </NavLink>
           </div>
           <div className="cart__buttons--modifier d-flex justify-content-between ">

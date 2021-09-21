@@ -16,8 +16,11 @@ function Order() {
   const toAddressForm = () => {
     setActiveStep(0);
   };
-  const toConfirmationPage = () => {
+  const toConfirmationPage = (dispatch) => {
     setActiveStep(2);
+    dispatch({
+      type: "PAYMENT__DONE",
+    });
   };
 
   let activeComponent;
@@ -37,7 +40,7 @@ function Order() {
     <main className="order">
       <div className="order__container">
         <h1 className="my-2">Checkout</h1>
-        <Stepper activeStep={activeStep} className="order__stepper">
+        <Stepper activeStep={activeStep} className="order__stepper my-4">
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>

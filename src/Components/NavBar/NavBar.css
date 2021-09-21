@@ -9,6 +9,12 @@
   top: 0;
   z-index: 1;
 }
+.navbar a {
+  text-decoration: none;
+}
+.navbar .navbar__left {
+  margin-left: 5px;
+}
 .navbar .navbar__left p {
   color: rgb(0, 174, 65);
   font-weight: bolder;

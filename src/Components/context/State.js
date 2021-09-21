@@ -4,7 +4,17 @@ const initialState = {
   falseUserDataTried: false,
   loggedInUser: {},
   cartTotalAmount: 0,
-  orderData: {},
+  orderData: {
+    orderDataEntered: false,
+    firstName: "",
+    lastName: "",
+    address: "",
+    eMail: "",
+    city: "",
+    ZIP: "",
+    country: "",
+    shippingOption: 45,
+  },
   deliveryCountries: [],
   users: [
     {

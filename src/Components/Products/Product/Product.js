@@ -20,6 +20,7 @@ function Product(props) {
         className="product__img"
         alt="Product Image"
         src={props.productImg}
+        loading="lazy"
       ></img>
       <div className="pt-1">
         <div className="product__nameDiv w-100 d-flex justify-content-center px-2 mt-1">
@@ -32,7 +33,11 @@ function Product(props) {
           </div>
           <div>
             <h5 className="mb-0">Price:</h5>
-            <h4 className="product__price mb-0">{props.productPrice}</h4>
+            <h4 className="product__price mb-0">
+              {props.productPrice.toLocaleString("en-GB", {
+                timeZone: "UTC",
+              })}
+            </h4>
           </div>
         </div>
         <div className="product__button d-flex justify-content-between">

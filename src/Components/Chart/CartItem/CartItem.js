@@ -13,7 +13,7 @@ function CartItem(props) {
     <div className="card d-flex justify-content-between align-items-center flex-column">
       <img className="w-100" src={props.itemImg} alt="item image"></img>
       <div className="car__info d-flex justify-content-between align-items-center w-100 px-1">
-        <h6 className="item__name w-75">{props.itemName}</h6>
+        <h6 className="item__name">{props.itemName}</h6>
         <p className="item__price">{props.itemPrice} €</p>
       </div>
       <div className="cart__actions">
