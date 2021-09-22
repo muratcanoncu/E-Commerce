@@ -23,7 +23,9 @@
   justify-content: space-between;
   align-items: center;
   height: auto;
-  margin-right: 20px;
+  margin: 0 auto;
+  /* margin-right: 20px; */
+  width: 70%;
 }
 .order .order__container .form_inputs input {
   outline: none;
