@@ -46,7 +46,8 @@
 MuiStepIcon-root.MuiStepIcon-active {
   color: rgb(0, 174, 65);
 }
-.form__section--two {
+.form__section--two,
+.form__section--one {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
