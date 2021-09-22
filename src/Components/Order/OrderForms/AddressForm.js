@@ -92,11 +92,17 @@ function AddressForm(props) {
             }
           />
           <datalist id="shipping__countries">
-            {shippingCountries.map((country) => {
+            <option value="Germany"></option>
+            <option value="France"></option>
+            <option value="England"></option>
+            <option value="Italy"></option>
+            <option value="Spain"></option>
+            <option value="Austria"></option>
+            {/* {shippingCountries.map((country) => {
               return (
                 <option key={country.alpha2Code} value={country.name}></option>
               );
-            })}
+            })} */}
           </datalist>
         </div>
         <div className="form__section--two ">
