@@ -27,7 +27,7 @@ function ConfirmationForm() {
           Order Received <i class="fas fa-check thick"></i>
         </h1>
         <h3>
-          Dear {orderInfo.userInfo.name} {orderInfo.userInfo.name},
+          Dear {orderInfo.userInfo.name} {orderInfo.userInfo.surName},
         </h3>
         <p className="text-left">
           Your order has been {text} placed <br />

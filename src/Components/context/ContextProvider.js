@@ -11,6 +11,7 @@ export function ContextProvider(props) {
     // const countries = axios.get(
     //   "https://restcountries.eu/rest/v2/region/europe"
     // );
+    console.log("fetched");
     if (products.status === 200) {
       dispatch({
         type: "PRODUCTS_DOWNLOADED",
