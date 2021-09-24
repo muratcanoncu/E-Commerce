@@ -11,17 +11,16 @@ export function ContextProvider(props) {
     // const countries = axios.get(
     //   "https://restcountries.eu/rest/v2/region/europe"
     // );
-    setTimeout(() => {
-      console.log("fetched");
-      if (products.status === 200) {
-        dispatch({
-          type: "PRODUCTS_DOWNLOADED",
-          payload: products.data,
-          // payloadTwo: countries.data,
-          payloadTwo: [],
-        });
-      }
-    }, 30000);
+
+    console.log("fetched");
+    if (products.status === 200) {
+      dispatch({
+        type: "PRODUCTS_DOWNLOADED",
+        payload: products.data,
+        // payloadTwo: countries.data,
+        payloadTwo: [],
+      });
+    }
   }, []);
   return (
     <UserContext.Provider value={{ mainState: state, myDispatch: dispatch }}>
