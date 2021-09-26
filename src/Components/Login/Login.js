@@ -5,6 +5,7 @@ import SmartLogo from "../Assets/SmartLogo.jpeg";
 // Images
 
 import SmartLoginLogo from "../Assets/smartRecruitersLoginLofo.png";
+import { Alert } from "bootstrap";
 function Login() {
   const [formData, setFormData] = useState({ userEmail: "", userPassword: "" });
   const [noLoginData, setNoLoginData] = useState(false);
@@ -23,6 +24,7 @@ function Login() {
       }, 2000);
     }
   };
+
   return (
     <main className="login">
       <nav className="navbar d-flex justify-content-between align-items-center px-2">
@@ -35,7 +37,7 @@ function Login() {
       <div className="content__section">
         <div className="form__side">
           <h1>Welcome to Smart Shop!</h1>
-          <img src={SmartLoginLogo}></img>
+          {/* <img src={SmartLoginLogo}></img> */}
           <form
             className="login__form d-flex justify-content-between flex-column align-items-center"
             onSubmit={(e) => {
